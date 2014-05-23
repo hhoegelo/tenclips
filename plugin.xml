@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            name="Tenclips Category"
+            id="tenclips.commands.category">
+      </category>
+      <command
+            name="Tenclips Copy"
+            categoryId="tenclips.commands.category"
+            id="tenclips.commands.copy">
+      </command>
+      <command
+            name="Tenclips Cut"
+            categoryId="tenclips.commands.category"
+            id="tenclips.commands.cut">
+      </command>
+      <command
+            name="Tenclips Paste"
+            categoryId="tenclips.commands.category"
+            id="tenclips.commands.paste">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            commandId="tenclips.commands.copy"
+            class="tenclips.handlers.TenclipsHandlerCopy">
+      </handler>
+      <handler
+            commandId="tenclips.commands.cut"
+            class="tenclips.handlers.TenclipsHandlerCut">
+      </handler>
+      <handler
+            commandId="tenclips.commands.paste"
+            class="tenclips.handlers.TenclipsHandlerPaste">
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.bindings">
+      <key
+            commandId="tenclips.commands.copy"
+            contextId="org.eclipse.ui.contexts.window"
+            sequence="M1+C"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration">
+      </key>
+      <key
+            commandId="tenclips.commands.cut"
+            contextId="org.eclipse.ui.contexts.window"
+            sequence="M1+X"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration">
+      </key>
+      <key
+            commandId="tenclips.commands.paste"
+            contextId="org.eclipse.ui.contexts.window"
+            sequence="M1+V"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration">
+      </key>
+   </extension>
+</plugin>
